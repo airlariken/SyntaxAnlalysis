@@ -7,11 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5835171A264133E8008D7D92 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58351719264133E8008D7D92 /* main.cpp */; };
+		589643F62643E3A5008534A1 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58351719264133E8008D7D92 /* main.cpp */; };
+		589643F72643E3A5008534A1 /* viable_prefixDFA.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5835172826413679008D7D92 /* viable_prefixDFA.cpp */; };
+		5896440F26443A74008534A1 /* lxh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5896440E26443A74008534A1 /* lxh.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		58351714264133E8008D7D92 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		589643ED2643E399008534A1 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -25,10 +36,22 @@
 /* Begin PBXFileReference section */
 		58351716264133E8008D7D92 /* SyntaxAnlalysis */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SyntaxAnlalysis; sourceTree = BUILT_PRODUCTS_DIR; };
 		58351719264133E8008D7D92 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		58351725264134A7008D7D92 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		5835172826413679008D7D92 /* viable_prefixDFA.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = viable_prefixDFA.cpp; sourceTree = "<group>"; };
+		5835172926413679008D7D92 /* viable_prefixDFA.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = viable_prefixDFA.hpp; sourceTree = "<group>"; };
+		589643F12643E399008534A1 /* SyntaxAnlalysis copy */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "SyntaxAnlalysis copy"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5896440E26443A74008534A1 /* lxh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lxh.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		58351713264133E8008D7D92 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		589643EC2643E399008534A1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -50,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				58351716264133E8008D7D92 /* SyntaxAnlalysis */,
+				589643F12643E399008534A1 /* SyntaxAnlalysis copy */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,6 +82,10 @@
 			isa = PBXGroup;
 			children = (
 				58351719264133E8008D7D92 /* main.cpp */,
+				58351725264134A7008D7D92 /* Header.h */,
+				5835172826413679008D7D92 /* viable_prefixDFA.cpp */,
+				5835172926413679008D7D92 /* viable_prefixDFA.hpp */,
+				5896440E26443A74008534A1 /* lxh.cpp */,
 			);
 			path = SyntaxAnlalysis;
 			sourceTree = "<group>";
@@ -80,6 +108,23 @@
 			name = SyntaxAnlalysis;
 			productName = SyntaxAnlalysis;
 			productReference = 58351716264133E8008D7D92 /* SyntaxAnlalysis */;
+			productType = "com.apple.product-type.tool";
+		};
+		589643E92643E399008534A1 /* SyntaxAnlalysis copy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 589643EE2643E399008534A1 /* Build configuration list for PBXNativeTarget "SyntaxAnlalysis copy" */;
+			buildPhases = (
+				589643EA2643E399008534A1 /* Sources */,
+				589643EC2643E399008534A1 /* Frameworks */,
+				589643ED2643E399008534A1 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SyntaxAnlalysis copy";
+			productName = SyntaxAnlalysis;
+			productReference = 589643F12643E399008534A1 /* SyntaxAnlalysis copy */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -109,6 +154,7 @@
 			projectRoot = "";
 			targets = (
 				58351715264133E8008D7D92 /* SyntaxAnlalysis */,
+				589643E92643E399008534A1 /* SyntaxAnlalysis copy */,
 			);
 		};
 /* End PBXProject section */
@@ -118,7 +164,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5835171A264133E8008D7D92 /* main.cpp in Sources */,
+				5896440F26443A74008534A1 /* lxh.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		589643EA2643E399008534A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				589643F62643E3A5008534A1 /* main.cpp in Sources */,
+				589643F72643E3A5008534A1 /* viable_prefixDFA.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +307,22 @@
 			};
 			name = Release;
 		};
+		589643EF2643E399008534A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		589643F02643E399008534A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -269,6 +340,15 @@
 			buildConfigurations = (
 				5835171E264133E8008D7D92 /* Debug */,
 				5835171F264133E8008D7D92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		589643EE2643E399008534A1 /* Build configuration list for PBXNativeTarget "SyntaxAnlalysis copy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				589643EF2643E399008534A1 /* Debug */,
+				589643F02643E399008534A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

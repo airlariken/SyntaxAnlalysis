@@ -6,9 +6,14 @@
 //
 
 #include <iostream>
-
+#include "viable_prefixDFA.hpp"
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+
+    ViablePrefixDFA my_prefixDFA;
+    my_prefixDFA.readGrammarFile();
+    my_prefixDFA.addDot();
+    my_prefixDFA.NFAConstructor();
+    my_prefixDFA.DFAConstructor();
+    my_prefixDFA.createAnalysisTable();
     return 0;
 }
