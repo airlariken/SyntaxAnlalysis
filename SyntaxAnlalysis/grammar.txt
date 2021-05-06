@@ -1,6 +1,5 @@
-E -> aA
-A -> cA
-A -> d
-E -> bB
-B -> cB
-B -> d
+S->E
+E->aAcBe
+A->b
+A->Ab
+B->d

@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		589643F62643E3A5008534A1 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58351719264133E8008D7D92 /* main.cpp */; };
 		589643F72643E3A5008534A1 /* viable_prefixDFA.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5835172826413679008D7D92 /* viable_prefixDFA.cpp */; };
-		5896440F26443A74008534A1 /* lxh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5896440E26443A74008534A1 /* lxh.cpp */; };
+		5896440F26443A74008534A1 /* SyntaxAnlalysis.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5896440E26443A74008534A1 /* SyntaxAnlalysis.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,7 +40,7 @@
 		5835172826413679008D7D92 /* viable_prefixDFA.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = viable_prefixDFA.cpp; sourceTree = "<group>"; };
 		5835172926413679008D7D92 /* viable_prefixDFA.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = viable_prefixDFA.hpp; sourceTree = "<group>"; };
 		589643F12643E399008534A1 /* SyntaxAnlalysis copy */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "SyntaxAnlalysis copy"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5896440E26443A74008534A1 /* lxh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lxh.cpp; sourceTree = "<group>"; };
+		5896440E26443A74008534A1 /* SyntaxAnlalysis.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SyntaxAnlalysis.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +85,7 @@
 				58351725264134A7008D7D92 /* Header.h */,
 				5835172826413679008D7D92 /* viable_prefixDFA.cpp */,
 				5835172926413679008D7D92 /* viable_prefixDFA.hpp */,
-				5896440E26443A74008534A1 /* lxh.cpp */,
+				5896440E26443A74008534A1 /* SyntaxAnlalysis.cpp */,
 			);
 			path = SyntaxAnlalysis;
 			sourceTree = "<group>";
@@ -164,7 +164,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5896440F26443A74008534A1 /* lxh.cpp in Sources */,
+				5896440F26443A74008534A1 /* SyntaxAnlalysis.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
