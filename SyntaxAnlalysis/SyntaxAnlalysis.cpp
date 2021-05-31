@@ -19,18 +19,18 @@ A->b
 A->Ab
 B->d
 */
-
 #define ACC 666 //接受状态
+
 vector<char>End;
 vector<char>unEnd;
-vector<string> initial_syntax;
+vector<string> initial_syntax;          //原始文法用作预测分析表的规约
 bool ifend(char c) {
-	for (int i = 0; i < End.size(); i++) {
-		if (c == End[i]) {
-			return true;
-		}
-	}
-	return false;
+    for (int i = 0; i < unEnd.size(); i++) {
+        if (c == unEnd[i]) {
+            return false;
+        }
+    }
+    return true;
 }
 struct Node {
 	bool flag = false;
@@ -58,29 +58,40 @@ public:
 void Term::initial() {
 	int id = 0;
     ifstream fin("/Users/chenziwei/C++/SyntaxAnlalysis/SyntaxAnlalysis/grammar.txt");
+    if(fin.fail()){
+        cerr<<"cant open grammar.txt"<<endl;
+        exit(-1);
+    }
 //	for (int i = 0; i < n; i++) {
     while (!fin.eof()) {//读到文件结尾eof
 		vector<char>val;
 		string s;
 		fin >> s;
         initial_syntax.push_back(s);//原始文法做好保存
-		for (int j = 0; j < s.length(); j++) {
-			val.push_back(s[j]);
-            if(s[j]<='z'&&s[j]>='a')
-                End.push_back(s[j]);//插入终态符
-            else if(s[j]<='Z'&&s[j]>='A')
+        for (int j = 0; j < s.length(); j++) {
+            val.push_back(s[j]);
+            if (j == 1 || j == 2 | j == '#') {//遇到->或者#也即空串跳过
+                continue;
+            }
+            if(s[j]<='Z'&&s[j]>='A')
                 unEnd.push_back(s[j]);//插入非终态符
-		}
-		Node*p = new Node;
-		p->id = id++;
-		p->start = val[0];
-		p->s.push_back('$');
-		for (int j = 3; j < val.size(); j++) {
-			p->s.push_back(val[j]);			
-		}
-		T.push_back(p);
-		DFS(p,id);
-	}
+            else{
+                End.push_back(s[j]);//插入终态符
+            }
+        }
+        Node*p = new Node;
+        p->id = id++;
+        p->start = val[0];
+        p->s.push_back('$');
+        for (int j = 3; j < val.size(); j++) {
+            if(val[3]!='#'){
+                p->s.push_back(val[j]);
+            }
+        }
+        T.push_back(p);
+        DFS(p,id);
+    }
+    
     //删除重复的元素
     sort(unEnd.begin(), unEnd.end());
     auto ite1 = unique(unEnd.begin(), unEnd.end());
@@ -316,7 +327,7 @@ void PridictionAnalysisTable::fillReduceState()
             string ini_syn;
             ini_syn += DFA_set[i]->s[0]->start;
             ini_syn += "->";
-            for (int x = 0; x < DFA_set[i]->s[0]->s.size()-1 ; ++x) {
+            for (int x = 0; x < DFA_set[i]->s[0]->s.size()-1 ; ++x) {//将项目读出
                 ini_syn += DFA_set[i]->s[0]->s[x];
             }
 //                cout<<"规约文法是"<<ini_syn<<endl;
@@ -389,7 +400,7 @@ void PridictionAnalysisTable::outputGotoTable()
         cout<<endl;
     }
 }
-void PridictionAnalysisTable::Interface(vector<vector<int>>& __action_table, vector<vector<int>>& __goto_table, vector<char> &__terminal_symbol, vector<char> &__unterminal_symbol)//传入四个vector后该函数返回信息
+void PridictionAnalysisTable::Interface(vector<vector<int>>& __action_table, vector<vector<int>>& __goto_table, vector<char> &__terminal_symbol, vector<char> &__unterminal_symbol)//传入四个vector后该函数返回四个带数据的参数
 {
     __action_table.clear();
     __goto_table.clear();
@@ -420,5 +431,4 @@ int main() {
 	D.out();
     PridictionAnalysisTable my_table(D.ALLdfa, End, unEnd);
     my_table.creatActionTable();
-    
 }

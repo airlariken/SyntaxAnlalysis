@@ -1,5 +1,8 @@
-S->E
-E->aAcBe
-A->b
-A->Ab
-B->d
+E->TA
+A->+TA
+A->#
+T->FB
+B->*FB
+B->#
+F->(E)
+F->i
